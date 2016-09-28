@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tFm-3b-XrJ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="77i-XO-QS4">
+            <objects>
+                <navigationController id="tFm-3b-XrJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Phq-ss-YnP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Q4a-Cq-u4c" kind="relationship" relationship="rootViewController" id="z76-Wl-uhe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfU-hl-nvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-834" y="-376"/>
+        </scene>
+        <!--The base VC-->
+        <scene sceneID="jcP-yj-c4m">
+            <objects>
+                <viewController id="Q4a-Cq-u4c" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n2y-ZD-btc"/>
+                        <viewControllerLayoutGuide type="bottom" id="S9z-Od-G4v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Gp-zu-tT9">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm the base VC that partially appears during a pop gesture animation." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61m-8U-ZCo">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOO-bk-UDq">
+                                <state key="normal" title="Show the problem VC"/>
+                                <connections>
+                                    <segue destination="FKz-RT-OA3" kind="show" id="kyX-ht-DP4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BOO-bk-UDq" firstAttribute="centerY" secondItem="3Gp-zu-tT9" secondAttribute="centerY" id="8V4-tb-h8T"/>
+                            <constraint firstItem="61m-8U-ZCo" firstAttribute="leading" secondItem="3Gp-zu-tT9" secondAttribute="leadingMargin" id="8pK-jW-peq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="61m-8U-ZCo" secondAttribute="trailing" id="TWd-Hk-AE4"/>
+                            <constraint firstItem="BOO-bk-UDq" firstAttribute="top" secondItem="61m-8U-ZCo" secondAttribute="bottom" constant="20" id="iRm-C0-1Zz"/>
+                            <constraint firstItem="BOO-bk-UDq" firstAttribute="centerX" secondItem="3Gp-zu-tT9" secondAttribute="centerX" id="m6X-cc-93g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="The base VC" id="hqj-dh-5WA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o4d-oZ-4A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87.200000000000003" y="-376.46176911544228"/>
+        </scene>
+        <!--This will be a problem-->
+        <scene sceneID="qtW-M8-alK">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="FKz-RT-OA3" customClass="BuggyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mge-9p-DVK"/>
+                        <viewControllerLayoutGuide type="bottom" id="0oz-Al-kSE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vUe-4D-hUL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="RSA-UE-cfA">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="theCell" rowHeight="44" id="Shp-Bc-bRu">
+                                        <rect key="frame" x="0.0" y="1" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Shp-Bc-bRu" id="gVo-S4-3dK">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FKz-RT-OA3" id="5ep-Tn-5ou"/>
+                                    <outlet property="delegate" destination="FKz-RT-OA3" id="z8k-pc-daY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0oz-Al-kSE" firstAttribute="top" secondItem="RSA-UE-cfA" secondAttribute="bottom" id="1N6-tg-7ei"/>
+                            <constraint firstAttribute="trailing" secondItem="RSA-UE-cfA" secondAttribute="trailing" id="EjM-dE-os0"/>
+                            <constraint firstItem="RSA-UE-cfA" firstAttribute="top" secondItem="Mge-9p-DVK" secondAttribute="bottom" id="Zsj-4Q-zRN"/>
+                            <constraint firstItem="RSA-UE-cfA" firstAttribute="leading" secondItem="vUe-4D-hUL" secondAttribute="leading" id="pnv-A7-lqZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="This will be a problem" id="snI-rF-9QG"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="RSA-UE-cfA" id="y3P-et-nEN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iBt-Oc-r5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669.60000000000002" y="-376.46176911544228"/>
+        </scene>
+    </scenes>
+</document>
